@@ -1,5 +1,5 @@
-Mobile Shop Information System Manager
-======================================
+Mobile Phone Shop Information System Manager
+============================================
 
 ## Team &lt;Which group?&gt;
 * **[BI10-063]** Do Quang Hieu
