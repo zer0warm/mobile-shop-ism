@@ -15,6 +15,7 @@ The main window will display all fields required to store a mobile phone entry, 
 The list of fields:
 * Name
 * Photo (optional)
+* Brand
 * Description (optional)
 * Storage
 * Color
