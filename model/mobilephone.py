@@ -10,6 +10,9 @@ class Mobilephone:
         self.__price = price
         Mobilephone.__id += 1
 
+    def speak(self):
+        return self.__dict__
+
     def export_info(self, db_obj):
         query = ''
         variables = ()

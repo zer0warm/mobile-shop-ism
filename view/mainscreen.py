@@ -1,3 +1,4 @@
+import tkinter as tk
 from view.view import ViewBase
 
 class WinMainscreen(tk.Frame):

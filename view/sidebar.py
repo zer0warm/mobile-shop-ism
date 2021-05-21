@@ -1,25 +1,34 @@
 import tkinter as tk
-import sys
 
-from controller.add import add_menu_handler
-from controller.edit import edit_menu_handler
-from controller.show import show_menu_handler
-from controller.delete import delete_menu_handler
+from view.add import WinAdd
 
-class Sidebar(tk.Frame):
+def add_handler(root):
+    def callback():
+        window = WinAdd(root)
+        window['width'] = 100
+        window.grid(row=0, column=1, rowspan=10)
+    return callback
+
+def quit_handler(root):
+    def callback():
+        root.destroy()
+    return callback
+
+class Sidebar(tk.LabelFrame):
     def __init__(self, master):
         super().__init__(master)
+        self.__master = master
+        self['text'] = 'Menu'
 
-        self.__entries = []
-
-    def create_widgets(self, menu):
-        for entry, handler in menu:
-            btn = tk.Button(self, text=entry, width=20, command=handler)
-            self.__entries.append(btn)
+    def create_widgets(self):
+        self.__entries = [
+            tk.Button(self, width=20, command=add_handler(self.__master), text='Add'),
+            tk.Button(self, width=20, command=add_handler(self.__master), text='Edit'),
+            tk.Button(self, width=20, command=add_handler(self.__master), text='Show'),
+            tk.Button(self, width=20, command=add_handler(self.__master), text='Delete'),
+            tk.Button(self, width=20, command=quit_handler(self.__master), text='Quit')
+        ]
 
     def display_widgets(self):
-        for entry in self.__entries:
-            if entry['text'] == 'Quit':
-                entry.pack(anchor='s', fill=tk.X)
-            else:
-                entry.pack(fill=tk.X)
+        for i in range(len(self.__entries)):
+            self.__entries[i].grid(row=i, column=0)
