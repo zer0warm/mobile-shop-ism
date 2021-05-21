@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
-import view.sidebar as sb
-import view.winlog as log
+import windows.sidebar as sb
+import windows.winlog as log
 
 if __name__ == '__main__':
     root = tk.Tk()

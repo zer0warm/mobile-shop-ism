@@ -1,11 +1,10 @@
 import tkinter as tk
 
-from view.add import WinAdd
+from windows.add import WinAdd
 
 def add_handler(root):
     def callback():
         window = WinAdd(root)
-        window['width'] = 100
         window.grid(row=0, column=1, rowspan=10)
     return callback
 
