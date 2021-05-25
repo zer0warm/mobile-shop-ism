@@ -31,6 +31,13 @@ class Mobilephone:
         Database.execute(query, variables);
         WinLog.update_log('Database: Update query executed.')
 
+    def delete_info(self):
+        query = '''delete from phones
+                   where id = (?);'''
+        variables = (self.__id,)
+        Database.execute(query, variables);
+        WinLog.update_log('Database: Delete query executed.')
+
     @staticmethod
     def import_info(db_obj):
         query = ''
