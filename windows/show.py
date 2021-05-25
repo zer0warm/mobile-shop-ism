@@ -28,9 +28,3 @@ class WinShow(tk.LabelFrame):
 
     def display_widgets(self):
         self.__tree.pack(expand=True, fill='both', side='top')
-
-    def get_user_input(self):
-        data = {}
-        for label, textentry in self.__widgets:
-            data[label['text']] = textentry
-        return data
