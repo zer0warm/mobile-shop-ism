@@ -9,10 +9,10 @@ class WinShow(tk.LabelFrame):
         super().__init__(master)
         self['text'] = 'List of mobile phones'
 
-        self.create_widgets()
-        self.display_widgets()
+        self.__create_widgets()
+        self.__display_widgets()
 
-    def create_widgets(self):
+    def __create_widgets(self):
         headings = ('id', 'brand', 'name', 'color', 'storage', 'price', 'qty')
         self.__tree = ttk.Treeview(self, columns=headings, show='headings')
 
@@ -26,5 +26,5 @@ class WinShow(tk.LabelFrame):
         for row in Database.get_result(all_=True):
             self.__tree.insert('', 'end', values=row)
 
-    def display_widgets(self):
+    def __display_widgets(self):
         self.__tree.pack(expand=True, fill='both', side='top')
