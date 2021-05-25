@@ -2,7 +2,7 @@ import tkinter as tk
 
 from model.database import Database
 from windows.manager import WinManager
-from windows.winlog import WinLog
+from windows.log import WinLog
 
 def handler(master, winstr):
     WinLog.update_log(f'<{winstr}> button pressed.')

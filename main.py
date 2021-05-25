@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from windows.sidebar import Sidebar
-from windows.winlog import WinLog
+from windows.log import WinLog
 from windows.base import WinBase
 from windows.manager import WinManager
 
