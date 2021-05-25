@@ -6,8 +6,8 @@ from windows.log import WinLog
 from windows.base import WinBase
 from windows.manager import WinManager
 
-from model.mobilephone import Mobilephone
-from model.database import Database
+from models.mobilephone import Mobilephone
+from models.database import Database
 
 if __name__ == '__main__':
     root = tk.Tk()

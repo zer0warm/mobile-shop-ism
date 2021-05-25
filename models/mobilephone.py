@@ -1,4 +1,4 @@
-from model.database import Database
+from models.database import Database
 
 class Mobilephone:
     __id = 0

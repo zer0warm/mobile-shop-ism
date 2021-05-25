@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from model.database import Database
+from models.database import Database
 from windows.manager import WinManager
 from windows.log import WinLog
 

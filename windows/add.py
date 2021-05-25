@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from model.mobilephone import Mobilephone
+from models.mobilephone import Mobilephone
 
 def add_button_handler(data):
     def callback():

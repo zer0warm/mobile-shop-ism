@@ -1,8 +1,8 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 
-from model.mobilephone import Mobilephone
-from model.database import Database
+from models.mobilephone import Mobilephone
+from models.database import Database
 
 class WinShow(tk.LabelFrame):
     def __init__(self, master):
