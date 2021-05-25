@@ -9,7 +9,7 @@ from models.database import Database
 class WinDelete(tk.LabelFrame):
     def __init__(self, master):
         super().__init__(master)
-        self['text'] = 'List of mobile phones'
+        self['text'] = 'Delete mobile phones'
 
         self.__create_widgets()
         self.__display_widgets()
