@@ -10,8 +10,9 @@ def add_button_handler(data):
         color = data['Color'].get()
         price = data['Price'].get()
         quantity = data['Quantity'].get()
-        new_phone = Mobilephone(brand, name, storage, color, price)
+        new_phone = Mobilephone(brand, name, storage, color, float(price), quantity)
         print(new_phone.speak())
+        new_phone.export_info()
     return callback
 
 def clear_button_handler(data):
@@ -50,8 +51,8 @@ class WinAdd(tk.LabelFrame):
             label, textentry = self.__widgets[i]
             label.grid(row=i, column=0)
             textentry.grid(row=i, column=1, columnspan=5)
-        self.__add_button.grid(row=i+1, column=4)
-        self.__clear_button.grid(row=i+1, column=5)
+        self.__add_button.grid(row=i+1, column=4, sticky='nsew')
+        self.__clear_button.grid(row=i+1, column=5, sticky='nsew')
 
     def get_user_input(self):
         data = {}
