@@ -1,13 +1,14 @@
 from windows.base import WinBase
 from windows.add import WinAdd
 from windows.show import WinShow
+from windows.edit import WinEdit
 #from windows.status import WinStatus
 
 class WinManager:
     __active = None
     __root = None
     __master = None
-    __window_maps = {'add': WinAdd, 'show': WinShow}
+    __window_maps = {'add': WinAdd, 'show': WinShow, 'edit': WinEdit}
 
     @staticmethod
     def set_root(root):
