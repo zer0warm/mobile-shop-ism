@@ -1,20 +1,25 @@
 import sqlite3
 
 class Database:
-    def __init__(self, filename):
-        self.__connection = sqlite3.connect(filename)
+    __connection = None
+    __cursor = None
 
-    def prepare(self):
-        self.__cursor = self.__connection.cursor()
+    @staticmethod
+    def init(filename):
+        Database.__connection = sqlite3.connect(filename)
+        Database.__cursor = Database.__connection.cursor()
 
-    def execute(self, query, variables):
-        self.__cursor.execute(query, variables)
+    @staticmethod
+    def execute(query, variables=()):
+        Database.__cursor.execute(query, variables)
+        Database.__connection.commit()
 
-    def get_result(self, all_=False):
+    @staticmethod
+    def get_result(all_=False):
         if all_:
-            return self.fetchall()
-        return self.fetchone()
+            return Database.__cursor.fetchall()
+        return Database.__cursor.fetchone()
 
-    def close(self):
-        self.__connection.commit()
-        self.__connection.close()
+    @staticmethod
+    def close():
+        Database.__connection.close()
