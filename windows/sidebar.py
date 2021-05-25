@@ -1,33 +1,33 @@
 import tkinter as tk
 
-from windows.add import WinAdd
+from model.database import Database
+from windows.manager import WinManager
+from windows.winlog import WinLog
 
-def add_handler(root):
+def handler(master, winstr):
+    WinLog.update_log(f'<{winstr}> button pressed.')
     def callback():
-        window = WinAdd(root)
-        window.grid(row=0, column=1, rowspan=10)
+        WinManager.create_window(winstr)
     return callback
 
-def quit_handler(root):
-    def callback():
-        root.destroy()
-    return callback
+def quit_handler():
+    Database.close()
+    WinManager.destroy_everything()
 
 class Sidebar(tk.LabelFrame):
     def __init__(self, master):
         super().__init__(master)
         self.__master = master
-        self['text'] = 'Menu'
 
     def create_widgets(self):
         self.__entries = [
-            tk.Button(self, width=20, command=add_handler(self.__master), text='Add'),
-            tk.Button(self, width=20, command=add_handler(self.__master), text='Edit'),
-            tk.Button(self, width=20, command=add_handler(self.__master), text='Show'),
-            tk.Button(self, width=20, command=add_handler(self.__master), text='Delete'),
-            tk.Button(self, width=20, command=quit_handler(self.__master), text='Quit')
+            tk.Button(self, command=handler(self.__master, 'add'), text='ADD'),
+            tk.Button(self, command=handler(self.__master, 'edit'), text='EDIT'),
+            tk.Button(self, command=handler(self.__master, 'show'), text='SHOW'),
+            tk.Button(self, command=handler(self.__master, 'delete'), text='DELETE'),
+            tk.Button(self, command=quit_handler, text='QUIT')
         ]
 
     def display_widgets(self):
         for i in range(len(self.__entries)):
-            self.__entries[i].grid(row=i, column=0)
+            self.__entries[i].pack(expand=True, fill='both')
