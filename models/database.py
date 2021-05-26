@@ -10,8 +10,12 @@ class Database:
         Database.__cursor = Database.__connection.cursor()
 
     @staticmethod
-    def execute(query, variables=()):
-        Database.__cursor.execute(query, variables)
+    def execute(query=None, variables=(), scripting=False, scriptfile=None):
+        if scripting:
+            with open(scriptfile) as f:
+                Database.__cursor.executescript(f.read())
+        else:
+            Database.__cursor.execute(query, variables)
         Database.__connection.commit()
 
     @staticmethod
