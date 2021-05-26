@@ -3,7 +3,6 @@ from tkinter import ttk
 
 from windows.sidebar import Sidebar
 from windows.log import WinLog
-from windows.base import WinBase
 from windows.manager import WinManager
 from windows.status import WinStatus
 

@@ -1,4 +1,3 @@
-from windows.base import WinBase
 from windows.add import WinAdd
 from windows.show import WinShow
 from windows.edit import WinEdit
