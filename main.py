@@ -16,7 +16,7 @@ if __name__ == '__main__':
     root.geometry(f'900x{root.winfo_screenheight()}+100+0')
 
     sidebar_frame = tk.LabelFrame(root, width=300, height=900, bd=10)
-    functional_frame = tk.LabelFrame(root, width=880, height=600, bd=10, background='green')
+    functional_frame = tk.LabelFrame(root, width=880, height=600, bd=10)
     log_frame = tk.LabelFrame(root, width=880, height=300, bd=10)
 
     logbar = WinLog(log_frame)
