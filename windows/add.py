@@ -11,7 +11,7 @@ def add_button_handler(data):
         price = data['Price'].get()
         quantity = data['Quantity'].get()
         new_phone = Mobilephone(brand, name, storage, color, float(price), quantity)
-        print(new_phone.speak())
+        new_phone.speak()
         new_phone.export_info()
     return callback
 
