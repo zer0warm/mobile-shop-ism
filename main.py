@@ -5,6 +5,7 @@ from windows.sidebar import Sidebar
 from windows.log import WinLog
 from windows.base import WinBase
 from windows.manager import WinManager
+from windows.status import WinStatus
 
 from models.mobilephone import Mobilephone
 from models.database import Database
@@ -36,5 +37,6 @@ if __name__ == '__main__':
     log_frame.pack(expand=True, fill='both', side='bottom')
 
     Database.init('sample.db')
+    WinManager.create_window('status')
 
     root.mainloop()
