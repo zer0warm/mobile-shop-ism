@@ -8,10 +8,6 @@ Mobile Phone Shop Information System Manager
 * **[BI10-143]** Nguyen Viet Phuong: Data collector, report writer
 * **[BI10-190]** Nguyen Gia Vien: Report writer
 
-## Design documents
-* [UI design](doc/ui.md)
-* [Code design](doc/code.md)
-
 ## Slides
 We have uploaded the [slides](Mobile_Phone_Store_Information_Management_System_Presentation.pdf).
 
