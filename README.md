@@ -11,3 +11,9 @@ Mobile Phone Shop Information System Manager
 ## Design documents
 * [UI design](doc/ui.md)
 * [Code design](doc/code.md)
+
+## Slides
+We have uploaded the [slides](Mobile_Phone_Store_Information_Management_System_Presentation.pdf).
+
+## Report
+We have uploaded the report, both its [Latex](report/Group17_Report.tex) and [PDF](report/Group17_Report.pdf) versions.
